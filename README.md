@@ -13,5 +13,12 @@ The frequency reduces the number of points returned by the service through the a
 The map can be scaled with the mouse wheel and moved with the left mouse button.
 Points can be saved to a text file by clicking the "Save place to file" button.
 
+
+
+Demonstration:
+![Moscow](https://user-images.githubusercontent.com/59667317/110163052-9e8be480-7e00-11eb-927b-387b08acf3b0.PNG)
+
+
+
 The class diagram:
 ![image](https://user-images.githubusercontent.com/59667317/110145176-33cfae80-7dea-11eb-9f71-25fe288a45c4.png)
