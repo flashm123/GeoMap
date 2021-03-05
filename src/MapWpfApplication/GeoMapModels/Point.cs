@@ -1,0 +1,32 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace MapWpfApplication
+{
+    /// <summary>
+    /// This struct defines Point model.
+    /// </summary>
+    struct Point
+    {
+        public double Lattitude
+        {
+            get;
+            set;
+        }
+
+        public double Longtittude
+        {
+            get;
+            set;
+        }
+
+        public Point(double lattitude, double longtittude)
+            : this()
+        {
+            Lattitude = lattitude;
+            Longtittude = longtittude;
+        }
+    }
+}
