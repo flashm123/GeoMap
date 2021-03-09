@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace MapWpfApplication
+﻿namespace MapWpfApplication
 {
     /// <summary>
     /// This struct defines Point model.
