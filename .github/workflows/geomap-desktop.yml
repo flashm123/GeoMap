@@ -17,5 +17,5 @@ jobs:
     steps:
       - name: Print Hello world
         run: |
-          echo Hello, world!
-          echo DOTNET_VERSION: ${{ env.DOTNET_VERSION }}
+          echo "Hello, world!"
+          echo "DOTNET_VERSION: ${{ env.DOTNET_VERSION }}"
