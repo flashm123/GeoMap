@@ -19,3 +19,4 @@ jobs:
         run: |
           echo "Hello, world!"
           echo "DOTNET_VERSION: ${{ env.DOTNET_VERSION }}"
+          dir
