@@ -20,3 +20,7 @@ jobs:
           echo "Hello, world!"
           echo "DOTNET_VERSION: ${{ env.DOTNET_VERSION }}"
           Get-Location
+      - name: Clone repo
+        uses: actions/checkout@v2
+      - name: Get all files
+        run: dir
