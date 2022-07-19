@@ -1,6 +1,7 @@
 # GeoMap
 
-![example workflow](https://github.com/flashm123/GeoMap/actions/workflows/geomap_base_workflow/badge.svg)
+Last deployment status: <br>
+<img src="https://github.com/flashm123/GeoMap/workflows/geomap_base_workflow/badge.svg"> <br>
 
 This application is used to search for locations and display them on the political world map. 
 It developed on C #, WPF technology using MVVM pattern and data binding. The app uses .NET 4.0
