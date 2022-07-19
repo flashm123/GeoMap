@@ -1,9 +1,8 @@
 name: geomap_base_workflow
 
 on:
-  push: |
-    branches: [ "main" ]
-    branches: [ "feature/ci_enchancements" ]
+  push:
+    branches: [ "main", "feature/ci_enchancements" ]
   pull_request:
     branches: [ "main" ]
 
