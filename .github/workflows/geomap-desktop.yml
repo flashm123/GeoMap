@@ -32,6 +32,11 @@ jobs:
       - name: Add msbuild to PATH
         uses: microsoft/setup-msbuild@v1.1
       
+      - name: Get all files
+        run: |
+          Set-Location -Path src
+          dir
+      
       - name: Build 
         run:
           msbuild MapWpfApplication.sln
