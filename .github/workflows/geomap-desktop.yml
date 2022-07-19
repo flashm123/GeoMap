@@ -1,8 +1,9 @@
 name: geomap_base_workflow
 
 on:
-  push:
+  push: |
     branches: [ "main" ]
+    branches: [ "feature/ci_enchancements" ]
   pull_request:
     branches: [ "main" ]
 
@@ -20,13 +21,6 @@ jobs:
           echo "Hello, world!"
           echo "DOTNET_VERSION: ${{ env.DOTNET_VERSION }}"
           Get-Location
-          
-      - name: Get .NET version
-        run: | 
-          Get-ChildItem 'HKLM:\SOFTWARE\Microsoft\NET Framework Setup\NDP' -recurse
-          Get-ItemProperty -name Version,Release -EA 0
-          Where { $_.PSChildName -match '^(?!S)\p{L}'}
-          Select PSChildName, Version, Release
           
       - name: Clone repo
         uses: actions/checkout@v3
