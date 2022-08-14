@@ -33,6 +33,5 @@ jobs:
         uses: microsoft/setup-msbuild@v1.1
       
       - name: Build 
-        run: |
+        run:
           cd
-          msbuild @SOLUTION_NAME /p:Configuration=Release
