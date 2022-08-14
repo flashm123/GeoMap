@@ -38,4 +38,4 @@ jobs:
         
       - name: Build 
         run:
-          dotnet build
+          msbuild MapWpfApplication.sln /p:Configuration=Release
