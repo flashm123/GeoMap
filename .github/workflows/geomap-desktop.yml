@@ -11,7 +11,7 @@ jobs:
     runs-on: windows-latest  # For a list of available runner types, refer to
                              # https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idruns-on
     env:
-      SOLUTION_NAME: "MapWpfApplication.suo"                         # Replace with your solution name, i.e. MyWpfApp.sln.
+      SOLUTION_NAME: "MapWpfApplication.sln"                         # Replace with your solution name, i.e. MyWpfApp.sln.
       DOTNET_VERSION: '5.0.301'                                    # The .NET SDK version to use
 
     steps:
@@ -33,5 +33,6 @@ jobs:
         uses: microsoft/setup-msbuild@v1.1
       
       - name: Build 
-        run:
-          msbuild MapWpfApplication.sln /p:Configuration=Release
+        run: |
+          cd
+          msbuild @SOLUTION_NAME /p:Configuration=Release
