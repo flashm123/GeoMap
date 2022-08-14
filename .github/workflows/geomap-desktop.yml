@@ -36,6 +36,12 @@ jobs:
       
       - name: Add msbuild to PATH
         uses: microsoft/setup-msbuild@v1.1
+        
+      - name: Setup NuGet
+        uses: NuGet/setup-nuget@v1.0.6
+        
+      - name: Restore Nuget packages
+        run: nuget restore MapWpfApplication.sln
       
       - name: Build 
         run: |
