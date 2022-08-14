@@ -33,7 +33,7 @@ jobs:
         uses: microsoft/setup-msbuild@v1.1
       
       - name: Build 
-        run:
+        run: |
           Set-Location -Path src
           dir
           msbuild MapWpfApplication.sln /p:Configuration=Release
