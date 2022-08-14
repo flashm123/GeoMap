@@ -34,4 +34,7 @@ jobs:
       
       - name: Build 
         run:
-          Get-Location
+          Set-Location -Path src
+          dir
+          msbuild MapWpfApplication.sln /p:Configuration=Release
+          
