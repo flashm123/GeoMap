@@ -15,6 +15,11 @@ jobs:
       DOTNET_VERSION: '5.0.301'                                    # The .NET SDK version to use
 
     steps:
+      - name: Install .NET
+        uses: actions/setup-dotnet@v2
+        with: 
+          dotnet-version: '4.0.x'
+    
       - name: Print Hello world
         run: |
           echo "Hello, world!"
