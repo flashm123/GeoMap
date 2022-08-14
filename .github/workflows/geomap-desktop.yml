@@ -41,7 +41,10 @@ jobs:
         uses: NuGet/setup-nuget@v1.0.6
         
       - name: Restore Nuget packages
-        run: nuget restore MapWpfApplication.sln
+        run: |
+          Set-Location -Path src
+          dir
+          nuget restore MapWpfApplication.sln
       
       - name: Build 
         run: |
