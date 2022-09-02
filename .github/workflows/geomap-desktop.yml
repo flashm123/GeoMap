@@ -11,8 +11,8 @@ jobs:
     runs-on: windows-2019  # For a list of available runner types, refer to
                              # https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idruns-on
     env:
-      SOLUTION_NAME: "MapWpfApplication.sln"                         # Replace with your solution name, i.e. MyWpfApp.sln.
-      DOTNET_VERSION: '5.0.301'                                    # The .NET SDK version to use
+      SOLUTION_NAME: "MapWpfApplication.sln"                   # Replace with your solution name, i.e. MyWpfApp.sln.
+      DOTNET_VERSION: '5.0'                                    # The .NET SDK version to use
 
     steps:
       - name: Install .NET
