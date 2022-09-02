@@ -44,7 +44,7 @@ jobs:
         run: |
           Set-Location -Path src
           dir
-          nuget restore MapWpfApplication.sln
+          nuget restore
       
       - name: Build 
         run: |
