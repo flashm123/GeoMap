@@ -44,7 +44,7 @@ jobs:
         run: |
           Set-Location -Path src
           dir
-          msbuild MapWpfApplication.sln -t:restore -p:RestorePackagesConfig=true
+          dotnet restore
       
       - name: Build 
         run: |
