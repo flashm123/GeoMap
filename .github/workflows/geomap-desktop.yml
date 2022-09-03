@@ -46,10 +46,28 @@ jobs:
           dir
           
           msbuild MapWpfApplication.sln -t:restore -p:RestorePackagesConfig=true
+          
+          Set-Location -Path MapWpfApplication
+          dir
+          
+          Set-Location -Path bin
+          dir
       
       - name: Build 
         run: |
           Set-Location -Path src
           dir
           msbuild MapWpfApplication.sln /p:Configuration=Release
+          
+          Set-Location -Path MapWpfApplication
+          dir
+          
+          Set-Location -Path bin
+          dir
+          
+          Set-Location -Path Release
+          dir
+          
+          Set-Location -Path x86
+          dir
           
