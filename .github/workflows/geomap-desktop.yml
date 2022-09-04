@@ -55,16 +55,12 @@ jobs:
           Set-Location -Path src
           dir
           
-          msbuild MapWpfApplication.sln /p:Configuration=Debug /p:PlatformTarget=x86
+          msbuild MapWpfApplication.sln /p:Configuration=Debug /p:PlatformTarget=x64
           
           Set-Location -Path packages
           dir
           
           Set-Location -Path ../
           
-          Set-Location -Path MapWpfApplication/bin
-          dir
-          
-          Set-Location -Path Debug
-          dir
+          Set-Location -Path MapWpfApplication
           
