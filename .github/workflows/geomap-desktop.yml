@@ -18,7 +18,7 @@ jobs:
       - name: Install .NET
         uses: actions/setup-dotnet@v2
         with: 
-          dotnet-version: '3.1.x'
+          dotnet-version: '5.0.300'
     
       - name: Print Hello world
         run: |
