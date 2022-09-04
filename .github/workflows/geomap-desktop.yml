@@ -52,6 +52,9 @@ jobs:
       
       - name: Build 
         run: |
+          Write-Output .NET version:
+          dotnet --info
+        
           Set-Location -Path src
           dir
           
