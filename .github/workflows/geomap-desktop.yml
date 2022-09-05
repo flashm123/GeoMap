@@ -58,7 +58,7 @@ jobs:
           Set-Location -Path src
           dir
           
-          msbuild MapWpfApplication.sln /p:Configuration=Debug /p:PlatformTarget=x64
+          dotnet build
           
           Set-Location -Path GeoMapApp
           dir
