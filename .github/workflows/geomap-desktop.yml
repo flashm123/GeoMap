@@ -7,7 +7,7 @@ on:
     branches: [ "main" ]
 
 jobs:
-  my_example:
+  ci_job:
     runs-on: windows-2019  # For a list of available runner types, refer to
                              # https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idruns-on
     env:
@@ -18,7 +18,7 @@ jobs:
       - name: Install .NET
         uses: actions/setup-dotnet@v2
         with: 
-          dotnet-version: '5.0.x'
+          dotnet-version: '5.0.300'
     
       - name: Print Hello world
         run: |
@@ -52,17 +52,18 @@ jobs:
       
       - name: Build 
         run: |
+          Write-Output .NET version:
+          dotnet --info
+        
           Set-Location -Path src
           dir
           
-          msbuild MapWpfApplication.sln /p:Configuration=Debug /p:PlatformTarget=x86
+          msbuild MapWpfApplication.sln /p:Configuration=Debug /p:PlatformTarget=x64
           
           Set-Location -Path packages
           dir
           
-          Set-Location -Path bin
-          dir
+          Set-Location -Path ../
           
-          Set-Location -Path Debug
-          dir
+          Set-Location -Path MapWpfApplication
           
