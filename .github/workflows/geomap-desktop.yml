@@ -8,32 +8,21 @@ on:
 
 jobs:
   ci_job:
-    runs-on: windows-2019  # For a list of available runner types, refer to
+    runs-on: windows-latest  # For a list of available runner types, refer to
                              # https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idruns-on
     env:
-      SOLUTION_NAME: "MapWpfApplication.sln"                   # Replace with your solution name, i.e. MyWpfApp.sln.
-      DOTNET_VERSION: '5.0'                                    # The .NET SDK version to use
+      SOLUTION_NAME: "GeoMapApp.sln"                   # Replace with your solution name, i.e. MyWpfApp.sln.
+      DOTNET_VERSION: '5.0.300'                        # The .NET SDK version to use
 
     steps:
       - name: Install .NET
         uses: actions/setup-dotnet@v2
         with: 
-          dotnet-version: '5.0.300'
+          dotnet-version: ${{ env.DOTNET_VERSION }}
     
-      - name: Print Hello world
-        run: |
-          echo "Hello, world!"
-          echo "DOTNET_VERSION: ${{ env.DOTNET_VERSION }}"
-          Get-Location
-          
       - name: Clone repo
         uses: actions/checkout@v3
         
-      - name: Get all files
-        run: |
-          Set-Location -Path src
-          dir
-      
       - name: Add msbuild to PATH
         uses: microsoft/setup-msbuild@v1.1
         
