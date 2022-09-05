@@ -38,7 +38,3 @@ jobs:
           
           Set-Location -Path GeoMapApp
           dir
-        
-      - name: Build 
-        run:
-          msbuild MapWpfApplication.sln /p:Configuration=Release
