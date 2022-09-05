@@ -47,9 +47,9 @@ jobs:
           
           msbuild MapWpfApplication.sln -t:restore -p:RestorePackagesConfig=true
           
-          Set-Location -Path packages
+          Set-Location -Path GeoMapApp
           dir
-      
+        
       - name: Build 
         run: |
           Write-Output .NET version:
@@ -60,10 +60,6 @@ jobs:
           
           msbuild MapWpfApplication.sln /p:Configuration=Debug /p:PlatformTarget=x64
           
-          Set-Location -Path packages
+          Set-Location -Path GeoMapApp
           dir
-          
-          Set-Location -Path ../
-          
-          Set-Location -Path MapWpfApplication
           
