@@ -40,15 +40,5 @@ jobs:
           dir
         
       - name: Build 
-        run: |
-          Write-Output .NET version:
-          dotnet --info
-        
-          Set-Location -Path src
-          dir
-          
-          dotnet build
-          
-          Set-Location -Path GeoMapApp
-          dir
-          
+        run:
+          msbuild MapWpfApplication.sln /p:Configuration=Release
