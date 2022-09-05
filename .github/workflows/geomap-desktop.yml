@@ -2,40 +2,39 @@ name: geomap_base_workflow
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "main", "feature/ci_enchancements" ]
   pull_request:
     branches: [ "main" ]
 
 jobs:
-  my_example:
+  ci_job:
     runs-on: windows-latest  # For a list of available runner types, refer to
                              # https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idruns-on
     env:
-      SOLUTION_NAME: "MapWpfApplication.suo"                         # Replace with your solution name, i.e. MyWpfApp.sln.
-      DOTNET_VERSION: '5.0.301'                                    # The .NET SDK version to use
+      SOLUTION_NAME: "GeoMapApp.sln"                   # Replace with your solution name, i.e. MyWpfApp.sln.
+      DOTNET_VERSION: '5.0.300'                        # The .NET SDK version to use
 
     steps:
-      - name: Print Hello world
-        run: |
-          echo "Hello, world!"
-          echo "DOTNET_VERSION: ${{ env.DOTNET_VERSION }}"
-          Get-Location
-          
-      - name: Get .NET version
-        run: | 
-          Get-ChildItem 'HKLM:\SOFTWARE\Microsoft\NET Framework Setup\NDP' -recurse
-          Get-ItemProperty -name Version,Release -EA 0
-          Where { $_.PSChildName -match '^(?!S)\p{L}'}
-          Select PSChildName, Version, Release
-          
+      - name: Install .NET
+        uses: actions/setup-dotnet@v2
+        with: 
+          dotnet-version: ${{ env.DOTNET_VERSION }}
+    
       - name: Clone repo
         uses: actions/checkout@v3
         
-      - name: Get all files
+      - name: Add msbuild to PATH
+        uses: microsoft/setup-msbuild@v1.1
+        
+      - name: Setup NuGet
+        uses: NuGet/setup-nuget@v1.0.6
+        
+      - name: Restore Nuget packages
         run: |
           Set-Location -Path src
           dir
-        
-      - name: Build 
-        run:
-          msbuild MapWpfApplication.sln /p:Configuration=Release
+          
+          nuget restore
+          
+          Set-Location -Path GeoMapApp
+          dir
