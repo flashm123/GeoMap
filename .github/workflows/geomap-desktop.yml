@@ -2,17 +2,17 @@ name: geomap_base_workflow
 
 on:
   push:
-    branches: [ "main", "feature/ci_enchancements" ]
+    branches: [ "main", "feature/**" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "**" ]
 
 jobs:
   ci_job:
-    runs-on: windows-latest  # For a list of available runner types, refer to
-                             # https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idruns-on
+    runs-on: windows-latest              # For a list of available runner types, refer to
+                                         # https://help.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idruns-on
     env:
-      SOLUTION_NAME: "GeoMapApp.sln"                   # Replace with your solution name, i.e. MyWpfApp.sln.
-      DOTNET_VERSION: '5.0.300'                        # The .NET SDK version to use
+      SOLUTION_NAME: "GeoMapApp"                  
+      DOTNET_VERSION: '5.0.300'          # The .NET SDK version to use
 
     steps:
       - name: Install .NET
@@ -35,6 +35,8 @@ jobs:
           dir
           
           nuget restore
-          
-          Set-Location -Path GeoMapApp
-          dir
+      
+      - name: Build
+        run: |
+          Set-Location -Path src
+          dotnet build
