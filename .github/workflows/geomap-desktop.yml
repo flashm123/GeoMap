@@ -40,3 +40,8 @@ jobs:
         run: |
           Set-Location -Path src
           dotnet build
+          
+      - name: Test
+        run: |
+          Set-Location -Path src
+          dotnet test
