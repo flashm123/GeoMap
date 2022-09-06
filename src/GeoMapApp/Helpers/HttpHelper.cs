@@ -10,14 +10,14 @@ namespace MapWpfApplication
     // <summary>
     // Help to get json with geo data using OSM API
     // </summary>
-    static class HttpHelper
+    public class OpenStreetMapDataHelper : IGetDataHelper
     {
         private static string getUrlTemplate = "https://nominatim.openstreetmap.org/search?q={0}&format=json&polygon_geojson=1";
 
         // <summary>
         // Perform GET request to OSM service
         // </summary>
-        public static string GetGeoData(string address)
+        public string GetGeoData(string address)
         {
             ServicePointManager.SecurityProtocol = (SecurityProtocolType)3072;
 

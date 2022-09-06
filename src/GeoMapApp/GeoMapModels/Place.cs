@@ -6,7 +6,7 @@ namespace MapWpfApplication
     /// This class defines Places model.
     /// Contains the place name and the points to pass them to View to display on the map
     /// </summary>
-    class Place
+    public class Place
     {
         public Place(string name, List<Point> points)
         {

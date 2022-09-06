@@ -7,11 +7,13 @@ namespace MapWpfApplication
     /// <summary>
     /// Interaction logic with GeoMapViewModel
     /// </summary>
-    class GeoMapViewModel : INotifyPropertyChanged
+    public class GeoMapViewModel : INotifyPropertyChanged
     {
         private readonly IGeoService geoService;
 
         private string address;
+
+        public IGetDataHelper getDataHelper;
 
         public string Address
         {
@@ -29,6 +31,7 @@ namespace MapWpfApplication
         public GeoMapViewModel()
         {
             geoService = new OpenStreetMapService();
+            getDataHelper = new OpenStreetMapDataHelper();
         }
 
         /// <summary>
@@ -36,7 +39,7 @@ namespace MapWpfApplication
         /// </summary>
         public List<Place> GetData(string address, int frequency)
         {
-            var jsonGeoData = HttpHelper.GetGeoData(address);
+            var jsonGeoData = getDataHelper.GetGeoData(address);
 
             geoService.CreateGeoModel(jsonGeoData);
 
