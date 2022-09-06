@@ -3,7 +3,7 @@
     /// <summary>
     /// This struct defines Point model.
     /// </summary>
-    struct Point
+    public struct Point
     {
         public double Lattitude
         {
