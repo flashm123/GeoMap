@@ -4,9 +4,9 @@ Last deployment status: <br>
 <img src="https://github.com/flashm123/GeoMap/workflows/geomap_base_workflow/badge.svg"> <br>
 
 This application is used to search for locations and display them on the political world map. 
-It developed on C #, WPF technology using MVVM pattern and data binding. The app uses .NET 4.0
+It developed on C #, WPF technology using MVVM pattern and data binding. The app uses .NET 5.0
 
-The map is displayed using [GMap.NET version 1.9.0.0](https://www.nuget.org/packages/GMap.NET.Windows/1.9.0).
+The map is displayed using [GMap.NET](https://www.nuget.org/packages/GMap.NET.Windows).
 
 
 The user enters the address and the points frequency and clicks "Search". The system sends a GET request to the OSM service and receives json, which contains a set of regions that match the entered request. Application deserializes json to object. 
